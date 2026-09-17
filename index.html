@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ela Alibi — Video Editor</title>
+<meta name="description" content="A cinematic video editing portfolio by Ela Alibi.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-mark" data-field="name">Ela Alibi</div>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="grain"></div>
+  <div class="hero-eyebrow">Video Editor</div>
+  <h1 data-field="name">Ela Alibi</h1>
+  <p><span data-field="tagline">Video editor cutting story-first work, in landscape and vertical.</span><span class="cursor">&nbsp;</span></p>
+</header>
+
+<main>
+
+  <section id="work" class="wrap">
+    <div class="section-head">
+      <h2>Work</h2>
+    </div>
+
+    <div class="group-label">Landscape</div>
+    <div class="grid landscape" id="landscape-grid"></div>
+
+    <div class="group-label">Vertical</div>
+    <div class="grid vertical" id="vertical-grid"></div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <h2>Tools</h2>
+    </div>
+    <div class="tools" id="tools-list"></div>
+  </section>
+
+  <section id="about" class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+    </div>
+    <p class="prose" data-field="bio">
+      Ela edits narrative and short-form video across Premiere Pro, DaVinci Resolve, and CapCut.
+    </p>
+    <div class="languages" id="languages-list"></div>
+  </section>
+
+  <section id="contact" class="wrap">
+    <div class="section-head">
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:hello@elaalibi.com" data-field="email">hello@elaalibi.com</a>
+      <a href="#" data-field="linkedin" target="_blank" rel="noopener" style="display:none;">LinkedIn</a>
+      <a href="#" data-field="youtube" target="_blank" rel="noopener" style="display:none;">YouTube</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> <span data-field="name">Ela Alibi</span></span>
+  <span>Built with care</span>
+</footer>
+
+<div class="modal" id="video-modal">
+  <div class="modal-inner">
+    <button class="modal-close" id="modal-close-btn">Close ✕</button>
+    <div class="modal-frame"></div>
+  </div>
+</div>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+<script src="script.js"></script>
+</body>
+</html>

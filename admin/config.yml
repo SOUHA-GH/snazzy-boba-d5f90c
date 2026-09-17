@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    files:
+      - file: "content/projects.json"
+        label: "Portfolio Projects"
+        name: "projects"
+        fields:
+          - label: "Landscape Projects"
+            name: "landscape"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "YouTube Link", name: "youtube_url", widget: "string", hint: "Paste the full YouTube URL (unlisted is fine)." }
+              - { label: "Custom Cover Image (optional)", name: "cover_image", widget: "image", required: false, hint: "Leave blank to auto-use the YouTube thumbnail. Upload only if you want a different cover frame." }
+              - { label: "Year (optional)", name: "year", widget: "string", required: false }
+          - label: "Vertical Projects"
+            name: "vertical"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "YouTube Link", name: "youtube_url", widget: "string", hint: "Paste the full YouTube Shorts or video URL." }
+              - { label: "Custom Cover Image (optional)", name: "cover_image", widget: "image", required: false, hint: "Leave blank to auto-use the YouTube thumbnail. Upload only if you want a different cover frame." }
+              - { label: "Year (optional)", name: "year", widget: "string", required: false }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "content/settings.json"
+        label: "General Settings"
+        name: "general"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Bio", name: "bio", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn URL (optional)", name: "linkedin", widget: "string", required: false }
+          - { label: "YouTube URL (optional)", name: "youtube", widget: "string", required: false }
+          - label: "Languages"
+            name: "languages"
+            widget: "list"
+            field: { label: "Language", name: "language", widget: "string" }
+          - label: "Tools"
+            name: "tools"
+            widget: "list"
+            field: { label: "Tool", name: "tool", widget: "string" }
