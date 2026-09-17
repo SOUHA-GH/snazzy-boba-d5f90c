@@ -30,6 +30,7 @@ export default defineStackbitConfig({
           name: "Projects",
           type: "data",
           filePath: "content/projects.json",
+
           fields: [
             {
               name: "landscape",
@@ -62,6 +63,7 @@ export default defineStackbitConfig({
       ],
       assetsConfig: {
         referenceType: "static",
+
         staticDir: ".",
         uploadDir: "images",
         publicPath: "/"
@@ -69,8 +71,6 @@ export default defineStackbitConfig({
     })
   ],
 
-  // Since this is a single static index.html (no page routing),
-  // we point the visual editor at "/" for both data documents.
   siteMap: ({ documents }) => {
     return documents
       .filter((d) => d.modelName === "Settings" || d.modelName === "Projects")
