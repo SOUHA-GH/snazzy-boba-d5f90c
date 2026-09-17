@@ -1,0 +1,13 @@
+{
+  "name": "ela-alibi-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"no build step\"",
+    "start": "echo \"static site, nothing to run\""
+  },
+  "devDependencies": {
+    "@stackbit/types": "^0.6.0",
+    "@stackbit/cms-git": "^0.4.0"
+  }
+}
