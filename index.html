@@ -12,11 +12,11 @@
 
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-sb-object-id="content/settings.json">
 
 <nav class="nav">
   <div class="wrap">
-    <div class="nav-mark" data-field="name">Ela Alibi</div>
+    <div class="nav-mark" data-field="name" data-sb-field-path="name">Ela Alibi</div>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
@@ -28,8 +28,9 @@
 <header class="hero">
   <div class="grain"></div>
   <div class="hero-eyebrow">Video Editor</div>
-  <h1 data-field="name">Ela Alibi</h1>
-  <p><span data-field="tagline">Video editor cutting story-first work, in landscape and vertical.</span><span class="cursor">&nbsp;</span></p>
+  <h1 data-field="name" data-sb-field-path="name">Ela Alibi</h1>
+  <p><span data-field="tagline" data-sb-field-path="tagline">Video editor cutting story-first work, in landscape and vertical.</span><span class="cursor">&nbsp;</span></p>
+
 </header>
 
 <main>
@@ -57,27 +58,28 @@
     <div class="section-head">
       <h2>About</h2>
     </div>
-    <p class="prose" data-field="bio">
+    <p class="prose" data-field="bio" data-sb-field-path="bio">
       Ela edits narrative and short-form video across Premiere Pro, DaVinci Resolve, and CapCut.
     </p>
     <div class="languages" id="languages-list"></div>
   </section>
+
 
   <section id="contact" class="wrap">
     <div class="section-head">
       <h2>Contact</h2>
     </div>
     <div class="contact-links">
-      <a href="mailto:hello@elaalibi.com" data-field="email">hello@elaalibi.com</a>
-      <a href="#" data-field="linkedin" target="_blank" rel="noopener" style="display:none;">LinkedIn</a>
-      <a href="#" data-field="youtube" target="_blank" rel="noopener" style="display:none;">YouTube</a>
+      <a href="mailto:hello@elaalibi.com" data-field="email" data-sb-field-path="email">hello@elaalibi.com</a>
+      <a href="#" data-field="linkedin" data-sb-field-path="linkedin" target="_blank" rel="noopener" style="display:none;">LinkedIn</a>
+      <a href="#" data-field="youtube" data-sb-field-path="youtube" target="_blank" rel="noopener" style="display:none;">YouTube</a>
     </div>
   </section>
 
 </main>
 
 <footer class="wrap">
-  <span>© <span id="year"></span> <span data-field="name">Ela Alibi</span></span>
+  <span>© <span id="year"></span> <span data-field="name" data-sb-field-path="name">Ela Alibi</span></span>
   <span>Built with care</span>
 </footer>
 
@@ -94,6 +96,7 @@
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
       if (!user) {
+
         window.netlifyIdentity.on("login", () => {
           document.location.href = "/admin/";
         });
